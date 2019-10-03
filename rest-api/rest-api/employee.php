@@ -35,31 +35,32 @@ class Employee{
         }
     }
     
-	function create(){
-	 
-		// Query to insert record.
-		$query = "INSERT INTO employee(name, role) VALUES (:name, :role)";
+    // Create an employee.
+    function create(){
+     
+        // Query to insert record.
+        $query = "INSERT INTO employee(name, role) VALUES(:name, :role)";
 
-		// Prepare query.
-		$stmt = $this->conn->prepare($query);
-	 
-		// Sanitize inputs.
-		$this->name=htmlspecialchars(strip_tags($this->name));
-		$this->role=htmlspecialchars(strip_tags($this->role));
-	 
-		// Bind values.
-		$stmt->bindParam(":name", $this->name);
-		$stmt->bindParam(":role", $this->role);
+        // Prepare query.
+        $stmt = $this->conn->prepare($query);
+     
+        // Sanitize inputs.
+        $this->name=htmlspecialchars(strip_tags($this->name));
+        $this->role=htmlspecialchars(strip_tags($this->role));
+     
+        // Bind values.
+        $stmt->bindParam(":name", $this->name);
+        $stmt->bindParam(":role", $this->role);
 
-		// Execute query.
-		if($stmt->execute()){
-			return true;
-		}
+        // Execute query.
+        if($stmt->execute()){
+            return true;
+        }
         else{
             print_r($stmt->errorInfo());
             return false;
         }
-	}
+    }
 }
 
 ?>
