@@ -14,6 +14,7 @@
     
     curl -X GET http://localhost/rest-api/read.php
 
+
 #########################################
 # Run if new mysql instance is installed to create root2 user.
     mysql -uroot -ppassword -e "CREATE USER 'root2'@'localhost' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON *.* TO 'root2'@'localhost' WITH GRANT OPTION; FLUSH PRIVILEGES;"
