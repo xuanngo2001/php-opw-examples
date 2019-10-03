@@ -1,4 +1,5 @@
 <?php
+// employee.php
 class Employee{
     private $conn;
  
