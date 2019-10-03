@@ -7,7 +7,7 @@ class Employee{
     public $name;
     public $role;
  
-    // Constructor with $db as database connection
+    // Constructor with $db as database connection.
     public function __construct($db){
         $this->conn = $db;
     }
@@ -15,7 +15,7 @@ class Employee{
     // Return all employees.
     function readAll(){
  
-        // Query to insert record.
+        // Query to select all records.
         $query = "SELECT * FROM employee";
  
         // Prepare query.
@@ -35,7 +35,7 @@ class Employee{
     // Create an employee.
     function create(){
  
-        // Query to insert record.
+        // Query to insert a record.
         $query = "INSERT INTO employee(name, role) VALUES(:name, :role)";
  
         // Prepare query.
