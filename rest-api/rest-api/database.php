@@ -1,4 +1,5 @@
 <?php
+// database.php
 class Database{
  
     // Specify your own database credentials.
