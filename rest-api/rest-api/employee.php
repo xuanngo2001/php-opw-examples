@@ -15,24 +15,25 @@ class Employee{
     }
 	
     
-	function readAll(){
-	 
-		// Query to insert record.
-		$query = "SELECT * FROM employee";
-
-		// Prepare query.
-		$stmt = $this->conn->prepare($query);
-	 
-		// Execute query.
-		if($stmt->execute()){
+    // Return all employees.
+    function readAll(){
+ 
+        // Query to insert record.
+        $query = "SELECT * FROM employee";
+ 
+        // Prepare query.
+        $stmt = $this->conn->prepare($query);
+ 
+        // Execute query.
+        if($stmt->execute()){
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			return $results;
-		}
+            return $results;
+        }
         else{
             print_r($stmt->errorInfo());
             return array();
         }
-	}
+    }
     
 	function create(){
 	 
