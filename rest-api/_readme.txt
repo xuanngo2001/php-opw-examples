@@ -1,3 +1,7 @@
+# Before running the commands below.
+#   Ensure that the credentials are correct in ./rest-api/database.php.
+#   Change -uroot2 and -ppassword according to your setup.
+
 # Copy PHP files to /var/www/html/.
     yes | cp -av ./rest-api /var/www/html/
 
@@ -15,7 +19,7 @@
     curl -X GET http://localhost/rest-api/read.php
 
 
-#########################################
+######################################### Optional
 # Run if new mysql instance is installed to create root2 user.
     mysql -uroot -ppassword -e "CREATE USER 'root2'@'localhost' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON *.* TO 'root2'@'localhost' WITH GRANT OPTION; FLUSH PRIVILEGES;"
     mysql -uroot -ppassword -e "GRANT ALL PRIVILEGES ON *.* TO 'root2'@'localhost' WITH GRANT OPTION; FLUSH PRIVILEGES;"
