@@ -2,8 +2,7 @@
 class Employee{
  
     private $conn;
-    private $table_name = "employee";
- 
+    
     // Object properties.
     public $id;
     public $name;
